@@ -25,7 +25,7 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'password',
-  database : 'actors_db'
+  database : 'animals_db'
 });
  
 connection.connect();
@@ -37,8 +37,8 @@ connection.connect();
 // 	});
 // });
 
-app.get('/actors.json', function(req, res){
-	connection.query('SELECT * FROM actors', function (error, results, fields) {
+app.get('/animals.json', function(req, res){
+	connection.query('SELECT * FROM animals', function (error, results, fields) {
 	  if (error) res.send(error)
 	  else res.json(results);
 	});
@@ -58,8 +58,8 @@ app.get('/actors.json', function(req, res){
 
 			chrome extension named post man 
 	*/
-app.post('/actors-insert', function(req, res){
-	connection.query('INSERT INTO actors (actor_name) VALUES (?)', [req.body.actor_name],function (error, results, fields) {
+app.post('/animals-insert', function(req, res){
+	connection.query('INSERT INTO animals (animal_name) VALUES (?)', [req.body.animal_name],function (error, results, fields) {
 	  if (error) res.send(error)
 	  else res.json({
 	  	message: 'success'
@@ -67,35 +67,6 @@ app.post('/actors-insert', function(req, res){
 	});
 });
 
-// http://localhost:3001/actors-delete?cat_id=3
-// what will the delete route look like in this app.js file
-app.delete('/actors-delete', function(req, res){
-	connection.query('DELETE FROM actors WHERE id = (?)', [req.body.actor_id],function (error, results, fields) {
-	  
-	  res.redirect('/');
-	
-	});
-});
-
-// one way
-	// http://localhost:3001/actors-update/6?actor_name=tom%20cruz
-	app.put('/actors-update', function(req, res){
-		connection.query('UPDATE actors SET actor_name = (?) WHERE id = (?)', [req.body.actor_name, req.body.actor_id],function (error, results, fields) {
-		  
-		  res.redirect('/');
-		
-		});
-	});
-
-// another way
-	// http://localhost:3001/cats-update?cat_name=dragon&cat_id=4
-	// app.get('/cats-update', function(req, res){
-	// 	connection.query('UPDATE cats SET cat_name = (?) WHERE id = (?)', [req.query.cat_name, req.query.cat_id],function (error, results, fields) {
-		  
-	// 	  res.redirect('/');
-		
-	// 	});
-	// });
 
 //so if the user hits a route that does not exist then redirec them to the home page
 app.get('*', function(req, res){

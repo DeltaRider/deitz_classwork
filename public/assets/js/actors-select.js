@@ -1,11 +1,11 @@
-function getActors(){
+function getAnimals(){
 	$('div').empty();
 
 	$.ajax({
-		url: '/actors.json',
+		url: '/animals.json',
 		method: 'GET'
-	}).then(function(actors){
-		for (var actorIndex in actors){
+	}).then(function(animals){
+		for (var animalIndex in animals){
 			// console.log(actorIndex);
 			// console.log(actors[actorIndex]);
 			// console.log(actors);
@@ -19,18 +19,7 @@ function getActors(){
 				// p.text("id: " + actors[actorIndex].id + ", actor name: " + actors[actorIndex].actor_name)
 
 			//another way
-				p.text(`id: ${actors[actorIndex].id}, actor name: ${actors[actorIndex].actor_name}`)
-
-				var bt = $('<button>'); //<button></button>
-				bt.attr('class', 'delete');
-				
-				bt.text('delete'); //<button>delete</button>
-				bt.attr('data-id', actors[actorIndex].id)
-				//<button data-id="4">delete</button>
-
-				p.append(bt);
-
-
+				p.text(`id: ${animals[animalIndex].id}, animal name: ${animals[animalIndex].animal_name}`)
 
 
 			$('div').prepend(p);

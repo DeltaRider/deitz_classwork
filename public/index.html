@@ -6,23 +6,13 @@
 </head>
 <body>
 
-<h1>Actors</h1>
+<h1>Animals</h1>
 
-<h2>Insert Actor</h2>
-<form action="/actors-insert" method="POST">
-	<input type="text" name="actor_name" placeholder="give an actor name">
+<h2>Insert Animal</h2>
+<form action="/animals-insert" method="POST">
+	<input type="text" name="animal_name" placeholder="give an actor name">
 
-	<button>insert the actor</button>
-</form>
-
-<h2>Update Actor</h2>
-<form action="/actors-update?_method=PUT" method="POST">
-	<input type="number" name="actor_id" placeholder="give an actor id">
-
-	<input type="text" name="actor_name" placeholder="give an actor a name">
-
-	<button>update the actor</button>
-</form>
+	<button>insert the animal</button>
 
 <div></div>
 
@@ -30,12 +20,11 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/assets/js/actors-select.js"></script>
-  <script type="text/javascript" src="/assets/js/actors-delete.js"></script>
+  <script type="text/javascript" src="/assets/js/animals-select.js"></script>
 
 
 <script type="text/javascript">
-	getActors();
+	getAnimals();
 </script>
 </body>
 </html>
