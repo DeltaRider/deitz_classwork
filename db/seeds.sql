@@ -3,8 +3,8 @@
 */
 USE animals_db;
 
-INSERT INTO animals (animal_name) VALUES	("dog");
-INSERT INTO animals (animal_name) VALUES	("cat");
-INSERT INTO animals (animal_name) VALUES	("bird");
-INSERT INTO animals (animal_name) VALUES	("goat");
-INSERT INTO animals (animal_name) VALUES	("monkey");
+INSERT INTO animal (animal_name) VALUES	("dog");
+INSERT INTO animal (animal_name) VALUES	("cat");
+INSERT INTO animal (animal_name) VALUES	("bird");
+INSERT INTO animal (animal_name) VALUES	("goat");
+INSERT INTO animal (animal_name) VALUES	("monkey");
